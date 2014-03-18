@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="org.ffosu.fixflow.runtime" name="名字" schema="schema/org.ffosu.fixflow.runtime.exsd"/>
+
+</plugin>
