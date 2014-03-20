@@ -92,25 +92,35 @@
          </documentation>
       </annotation>
       <complexType>
-         <attribute name="id" type="string">
+         <attribute name="id" type="string" use="required">
             <annotation>
                <documentation>
-                  
+                  TAB页编号
                </documentation>
             </annotation>
          </attribute>
          <attribute name="name" type="string">
             <annotation>
                <documentation>
-                  
+                  TAB页名称
                </documentation>
             </annotation>
          </attribute>
-         <attribute name="new_attribute2" type="string">
+         <attribute name="order" type="string">
             <annotation>
                <documentation>
-                  
+                  排序 例：1、2、3(从小到大)
                </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="calss" type="string">
+            <annotation>
+               <documentation>
+                  TAB页实现类
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java"/>
+               </appinfo>
             </annotation>
          </attribute>
       </complexType>

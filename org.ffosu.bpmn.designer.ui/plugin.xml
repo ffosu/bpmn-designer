@@ -4,5 +4,23 @@
    <extension
          point="org.eclipse.ui.newWizards">
    </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="org.eclipse.bpmn2.modeler.ui.editor.BPMN2MultiPageEditor"
+            default="false"
+            id="org.ffosu.bpmn.designer.ui.editor1"
+            name="%editor.name">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+      <propertyContributor
+            contributorId="org.ffosu.bpmn.designer.ui.propertyContributor"
+            labelProvider="org.ffosu.bpmn.designer.ui.propertysheet.FixLabelProvider"
+            tabDescriptorProvider="org.ffosu.bpmn.designer.ui.propertysheet.FixTabDescriptorProvider">
+         <propertyCategory></propertyCategory>
+      </propertyContributor>
+   </extension>
 
 </plugin>
