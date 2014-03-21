@@ -15,7 +15,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.emf.ecore;bundle-version="2.9.1",
  org.eclipse.graphiti;bundle-version="0.10.1",
  org.eclipse.graphiti.ui;bundle-version="0.10.1",
- org.eclipse.gef;bundle-version="3.9.0"
+ org.eclipse.gef;bundle-version="3.9.0",
+ org.ffosu.bpmn.designer.core;bundle-version="1.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: %providerName

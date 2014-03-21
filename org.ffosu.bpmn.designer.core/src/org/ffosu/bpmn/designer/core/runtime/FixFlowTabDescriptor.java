@@ -21,33 +21,35 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.views.properties.tabbed.AbstractTabDescriptor;
 import org.eclipse.ui.views.properties.tabbed.TabContents;
 
-public class Bpmn2TabDescriptor extends AbstractTabDescriptor {
+public class FixFlowTabDescriptor extends AbstractTabDescriptor {
 
 	protected String id;
 	protected String category;
 	protected String label;
+	protected String order;
 	protected String afterTab = null;
 	protected String replaceTab = null;
 	protected boolean indented = false;
 	protected Image image = null;
 	protected boolean popup = true;
 
-	public Bpmn2TabDescriptor(IConfigurationElement e) {
+	public FixFlowTabDescriptor(IConfigurationElement e) {
 		id = e.getAttribute("id"); //$NON-NLS-1$
 		category = e.getAttribute("category"); //$NON-NLS-1$
 		if (category==null || category.isEmpty())
 			category = "BPMN2"; //$NON-NLS-1$
 		label = e.getAttribute("label"); //$NON-NLS-1$
-		afterTab = e.getAttribute("afterTab"); //$NON-NLS-1$
+		order = e.getAttribute("order");
+		/*afterTab = e.getAttribute("afterTab"); //$NON-NLS-1$
 		replaceTab = e.getAttribute("replaceTab"); //$NON-NLS-1$
 		String s = e.getAttribute("indented"); //$NON-NLS-1$
 		indented = s!=null && s.trim().equalsIgnoreCase("true"); //$NON-NLS-1$
 		s = e.getAttribute("popup"); //$NON-NLS-1$
 		if (s!=null && s.trim().equalsIgnoreCase("false")) //$NON-NLS-1$
-			popup = false;
+			popup = false;*/
 	}
 	
-	public Bpmn2TabDescriptor(String id, String category, String label) {
+	public FixFlowTabDescriptor(String id, String category, String label) {
 		this.id = id;
 		if (category==null || category.isEmpty() )
 			category = "BPMN2"; //$NON-NLS-1$
@@ -94,19 +96,16 @@ public class Bpmn2TabDescriptor extends AbstractTabDescriptor {
 
 	@Override
 	public TabContents createTab() {
-		// TODO Auto-generated method stub
 		return super.createTab();
 	}
 
 	@Override
 	public boolean isSelected() {
-		// TODO Auto-generated method stub
 		return super.isSelected();
 	}
 
 	@Override
 	public void setSectionDescriptors(List sectionDescriptors) {
-		// TODO Auto-generated method stub
 		super.setSectionDescriptors(sectionDescriptors);
 	}
 
@@ -117,7 +116,7 @@ public class Bpmn2TabDescriptor extends AbstractTabDescriptor {
 
 	@Override
 	public Object clone() {
-		Bpmn2TabDescriptor td = new Bpmn2TabDescriptor(id, category, label);
+		FixFlowTabDescriptor td = new FixFlowTabDescriptor(id, category, label);
 		td.afterTab = this.afterTab;
 		td.replaceTab = this.replaceTab;
 		if (image!=null)
@@ -129,8 +128,8 @@ public class Bpmn2TabDescriptor extends AbstractTabDescriptor {
 		return td;
 	}
 
-	public Bpmn2TabDescriptor copy() {
-		Bpmn2TabDescriptor td = new Bpmn2TabDescriptor(id, category, label);
+	public FixFlowTabDescriptor copy() {
+		FixFlowTabDescriptor td = new FixFlowTabDescriptor(id, category, label);
 		td.id += td.hashCode();
 		td.afterTab = this.afterTab;
 		td.replaceTab = this.replaceTab;
@@ -139,8 +138,8 @@ public class Bpmn2TabDescriptor extends AbstractTabDescriptor {
 		td.indented = this.indented;
 		td.popup = this.popup;
 		td.image = this.image;
-		for (Bpmn2SectionDescriptor sd : (List<Bpmn2SectionDescriptor>)getSectionDescriptors()) {
-			td.getSectionDescriptors().add(new Bpmn2SectionDescriptor(td, sd));
+		for (FixFlowSectionDescriptor sd : (List<FixFlowSectionDescriptor>)getSectionDescriptors()) {
+			td.getSectionDescriptors().add(new FixFlowSectionDescriptor(td, sd));
 		}
 
 		return td;

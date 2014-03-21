@@ -19,8 +19,16 @@
             contributorId="org.ffosu.bpmn.designer.ui.propertyContributor"
             labelProvider="org.ffosu.bpmn.designer.ui.propertysheet.FixLabelProvider"
             tabDescriptorProvider="org.ffosu.bpmn.designer.ui.propertysheet.FixTabDescriptorProvider">
-         <propertyCategory></propertyCategory>
+         <propertyCategory
+               category="BPMN"></propertyCategory>
       </propertyContributor>
+   </extension>
+   <extension
+         point="org.ffosu.fixflow.runtime">
+      <propertyTab
+            class="org.ffosu.bpmn.designer.ui.propertysheet.TTT"
+            id="org.ffosu.bpmn.designer.ui.propertyTab1">
+      </propertyTab>
    </extension>
 
 </plugin>
